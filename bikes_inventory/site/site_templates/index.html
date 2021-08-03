@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- One big div container to hold everything -->
+<div class="container">
+    <!-- Start of Header -->
+    <header class="row">
+        <div class="col-12 col-md-4">
+            <img src="../../static/images/undraw_biking_kc4f.svg" alt="man on a bike ride" class="header-image">
+        </div>
+        <div class="col-12 col-md-4" id="header-text">
+            <h2>Finally: a garage for your bike info</h2>
+            <h5>Store, manage, and connect your bikes like never before.</h5>
+            <div class="header-buttons">
+                <button class="btn btn-dark" id="learn-more-button">Learn More</button>
+                <button class="btn btn-outline-dark" id="sign-up-button">Sign Up</button>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- End of Header -->
+    <!-- start of middle section -->
+    <section class="row">
+        <div class="col-12" id="middle-text">
+            <h3>Showcase your obsession</h3>
+            <p>Bikes, parts, even tools, all stored in one place.</p>
+        </div>
+    </section>
+    <!-- end of middle section -->
+    <!-- start features -->
+    <section class="row" id="features-section">
+        <div class="col-12 col-md-4 justify-items-center">
+            <img src="../../static/images/beam.png" alt="beam icon" id="frame-material-image">
+            <h4>Frame Specs</h4>
+            <p>Customize the build and see how it impacts weight and top speed.</p>
+        </div>
+        <div class="col-12 col-md-4 justify-items-center">
+            <img src="../../static/images/configuration.png" alt="gears" id="drivetrain-image">
+            <h4>Drivetrain and components</h4>
+            <p>Shimano, Campagnolo, Suntour, all are welcome</p>
+        </div>
+        <div class="col-12 col-md-4 justify-items-center">
+            <img src="../../static/images/wheel.png" alt="bicycle tire" id="wheel-image">
+            <h4>Wheels and Tires</h4>
+            <p>Rubber side down</p>
+        </div>
+    </section>
+    <!-- end features -->
+    <!-- Start community section -->
+    <section class="row d-flex mx-auto" id="community-row">
+        <div class="col-12 col-md-6" id="community-text">
+            <h2>Join a growing community of cyclists to see how people ride around the world.</h2>
+            <button class="btn btn-warning">Sign Up</button>
+        </div>
+        <div class="col-12 col-md-6" id="community-image">
+            <img src="../../static/images/undraw_connected_world_wuay.svg" alt="connected world" id="global">
+        </div>
+    </section>
+    <!-- end community section -->
+
+
+</div>
+
+<footer class="row" id="footer">
+    <img src="../../static/images/bicycle-logo.png" alt="bike logo" id="footer-logo">
+    <div class="col-2 col-md-2 footer-text-flex">
+        <h4>Store</h4>
+        <p>
+            All your Bikes
+        </p>
+        <p>
+            In one Place
+        </p>
+    </div>
+    <div class="col-2 col-md-2 footer-text-flex">
+        <h4>Learn</h4>
+        <p>
+            Knowledge-base
+        </p>
+        <p>
+            Without Limits
+        </p>
+    </div>
+    <div class="col-2 col-md-2 footer-text-flex">
+        <h4>Connect</h4>
+        <p>
+            More Bikes
+        </p>
+        <p>
+            More Riders
+        </p>
+    </div>
+    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+</footer>
+
+
+
+
+{% endblock content %}

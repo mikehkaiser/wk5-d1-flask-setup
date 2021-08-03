@@ -1,0 +1,107 @@
+body{
+    background-color: gainsboro
+}
+
+/* Nav Styling */
+.ct-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.ct-nav img{
+    display: flex;
+    width: 35%;
+    max-width: 80%;
+    margin: auto;
+}
+
+ul#horizontal-list{
+    min-width: 80vw;
+    list-style: none;
+    padding-top: 1.5vw;   
+}
+
+ul#horizontal-list li, ul#horizontal-list a{
+    display: inline;
+    text-decoration: none;
+    padding: 0.5vw;
+    color: black
+}
+
+/* end nav styling */
+
+/* Begin Hero Styling */
+.header-image{
+    width: 90%;
+    max-width: 100%
+}
+
+header{
+    display: inline;
+    justify-content: center;
+    padding-top: 3.5vh
+}
+
+#sign-up-button{
+    margin-left: 1.5vw
+}
+
+/* end hero section styling */
+
+/* start middle section styling */
+#middle-text{
+    text-align: center;
+    padding: 5vh;
+    margin-top: 2.5vw
+}
+/* end middle section */
+
+/* start featured section */
+#frame-material-image, #drivetrain-image, #wheel-image{
+    width: 50%;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    margin-bottom: 5vw
+}
+
+#features-section div{
+    text-align: center;
+    margin-top: 3vw
+}
+/* end featured */
+
+/* community */
+#global{
+    display: block;
+    width: 70%;
+    max-width: 100%;
+    margin: auto
+}
+
+#community-row{
+    margin-top: 2vw;
+    vertical-align: center
+}
+
+/* footer */
+.footer-text-flex{
+    display: flex;
+    flex-direction: column;
+    margin: auto
+}
+
+#footer{
+    background-color: slategray;
+    display: flex;
+    justify-content: center;
+    margin-top: 8vw;
+    padding: 3vw;
+    color: white
+}
+#footer-logo{
+    display: block;
+    width: 20%;
+    max-width: 50%
+}
