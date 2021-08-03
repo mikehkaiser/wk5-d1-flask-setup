@@ -18,7 +18,9 @@
     <!-- Navbar starts here -->
     <nav class="ct-nav">
         <div class="navigation">
-            <img src="../static/images/bicycle-logo.png" alt="bike logo" id="nav-logo">
+            <a href="{{ url_for('site.home') }}">
+                <img src="../static/images/bicycle-logo.png" alt="bike logo" id="nav-logo">
+            </a>
         </div>
         <!-- End Nav logo div -->
         <!-- Start Nav Items -->
@@ -36,10 +38,10 @@
                 <a href="">
                     <li>Vintage Brochures</li>
                 </a>
-                <a href="">
+                <a href="{{ url_for('auth.signup') }}">
                     <button class="btn btn-warning">Sign Up</button>
                 </a>
-                <a href="">
+                <a href="{{ url_for('auth.signin') }}">
                     <button class="btn btn-outline-dark">Login</button>
                 </a>
             </ul>
@@ -51,7 +53,7 @@
 
     {% endblock content %}
 
-    
+
 </body>
 
 </html>

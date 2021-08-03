@@ -80,9 +80,13 @@ header{
     margin: auto
 }
 
+#community-text{
+    align-self: center
+}
+
 #community-row{
     margin-top: 2vw;
-    vertical-align: center
+    
 }
 
 /* footer */
