@@ -5,12 +5,7 @@
 {% with messages = get_flashed_messages(with_categories = true) %}
     {% if messages %}
         {% for cat, msg in messages %}
-            {% if cat == 'auth-failed' %}
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ msg }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                </div>
-            {% elif cat == 'user-created' %}
+            {% if cat == 'auth-success' %}
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{ msg }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -20,9 +15,20 @@
     {% endif %}
 {% endwith %}
 
-<h2>Sign in here</h2>
-<!-- will create form to validate user input against stored
-information in bikes_db -->
-{% include 'form.html' %}
+<header class="hero-section">
+    <h3 class="header-text">Welcome to Bikes, Bikes, Bikes</h3>
+</header>
+<div class="container">
+    <h3>Your bare-bones profile</h3>
+    <ul class="list-group">
+        <li class="list-group-item">
+            Email: {{ current_user.email }}
+        </li>
+        <li class="list-group-item">
+            Token: {{ current_user.token }}
+        </li>
+    </ul>
+</div>
 
 {% endblock content %}
+

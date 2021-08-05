@@ -1,36 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <h2>Sign up here</h2>
-<main class="container">
-    <div class="row">
-        <aside class="col-12 col-md-6">
-            <h2></h2>
-            <form method="POST">
-                <div class="form-group">
-                    {{ form.hidden_tag() }}
-                    <fieldset id="email-field">
-                        <!-- using jinja statement to make a field -->
-                        {{ form.email.label }}
-                        {{ form.email(class="form-control", placeholder="Enter email address") }}
-                    </fieldset>
-                    <fieldset id="password-field">
-                        {{ form.password.label }}
-                        {{ form.password(class="form-control", placeholder="Create a password") }}
-                    </fieldset>
-                    <fieldset>
-                        {{ form.confirm.label }}
-                        {{ form.confirm(class="form-control", placeholder="Enter password again") }}
 
-                    </fieldset>
+    {% include 'form.html' %}
 
-                    <!-- submit button -->
-                    {{ form.submit_button(class="btn btn-warning btn-block") }}
-                </div>
-            </form>
-        </aside>
-    </div>
-</main>
-<!-- use classes from forms.py to make a form
-in html page, using jinja expressions -->
 {% endblock content %}

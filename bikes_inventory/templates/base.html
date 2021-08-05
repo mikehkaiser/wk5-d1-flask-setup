@@ -26,24 +26,30 @@
         <!-- Start Nav Items -->
         <div>
             <ul id="horizontal-list">
-                <a href="">
-                    <li>Bike Collecting 101</li>
+                <a href="{{ url_for('site.home') }}">
+                    <li>Home</li>
                 </a>
-                <a href="">
-                    <li>Why Bikes^3?</li>
+                <a href="#">
+                    <li>Photo Galleries</li>
                 </a>
-                <a href="">
-                    <li>Pricing Guides</li>
-                </a>
-                <a href="">
-                    <li>Vintage Brochures</li>
-                </a>
-                <a href="{{ url_for('auth.signup') }}">
-                    <button class="btn btn-warning">Sign Up</button>
-                </a>
-                <a href="{{ url_for('auth.signin') }}">
-                    <button class="btn btn-outline-dark">Login</button>
-                </a>
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('site.profile')}}">
+                        <li>Your Profile</li>
+                    </a>
+                    <a href="{{ url_for('site.profile')}}">
+                        <li>Your Bikes</li>
+                    </a>
+                    <a href="{{ url_for('auth.logout') }}">
+                        <li>Logout</li>
+                    </a>
+                {% else %}
+                    <a href="{{ url_for('auth.signin') }}">
+                        <button class="btn btn-warning">Login</button>
+                    </a>
+                    <a href="{{ url_for('auth.signup') }}">
+                        <button class="btn btn-outline-dark">Signup</button>
+                    </a>
+                {% endif %}
             </ul>
         </div>
 
