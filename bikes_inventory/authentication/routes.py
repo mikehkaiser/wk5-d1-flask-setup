@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash 
 from flask_login import login_user, logout_user, login_required
-from bikes_inventory.forms import UserLoginForm #import class UserLoginForm from forms.py
+from bikes_inventory.forms import UserLoginForm, UserSignupForm #import class UserLoginForm from forms.py
 from bikes_inventory.models import User, db, check_password_hash
 #import classes User and db from models.py
 
@@ -14,7 +14,7 @@ auth = Blueprint('auth', __name__, template_folder='auth_templates')
 #__init__ to display page 
 @auth.route('/signup', methods = ['GET', 'POST'])
 def signup():
-    form = UserLoginForm()
+    form = UserSignupForm()
     if request.method == 'POST' and form.validate_on_submit():
         email = form.email.data
         password = form.password.data
