@@ -53,26 +53,20 @@ class User(db.Model, UserMixin):
 
 class Bike(db.Model):
     id = db.Column(db.String, primary_key = True)
-    model_name = db.Column(db.String(150))
+    model = db.Column(db.String(150))
     manufacturer = db.Column(db.String(150))
     size = db.Column(db.String(25))
-    msrp = db.Column(db.Numeric(precision=10,scale=2))
-    frame_material = db.Column(db.String(150), nullable = True)
+    frameMaterial = db.Column(db.String(150), nullable = True)
     category = db.Column(db.String(100), nullable = True)
-    speeds = db.Column(db.String(10))
-    stock_weight = db.Column(db.String(50))
     user_token = db.Column(db.String, db.ForeignKey('user.token'))
 
-    def __init__(self,model_name, manufacturer, size, msrp,frame_material, category,speeds,stock_weight,user_token, id = ''):
+    def __init__(self,model, manufacturer, size, frameMaterial, category, user_token, id = ''):
         self.id = self.set_id()
-        self.model_name = model_name
+        self.model = model
         self.manufacturer = manufacturer
         self.size = size
-        self.msrp = msrp
-        self.frame_material = frame_material
+        self.frameMaterial = frameMaterial
         self.category = category
-        self.speeds = speeds
-        self.stock_weight = stock_weight
         self.user_token = user_token
 
     def set_id(self):
@@ -82,8 +76,7 @@ class Bike(db.Model):
 class BikeSchema(ma.Schema):
     class Meta:
         # tells which fields to pull out of drone and send to API call
-        fields = ['id', 'model_name', 'manufacturer', 'size','msrp', 'frame_material', 'category', 'speeds', 
-        'stock_weight', 'user_token']
+        fields = ['id', 'model', 'manufacturer', 'size', 'frameMaterial', 'category', 'user_token']
     
 bike_schema = BikeSchema()
 bikes_schema = BikeSchema(many=True)

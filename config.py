@@ -11,6 +11,6 @@ class Config:
     Eventually will be use hidden variable items
     """
     SECRET_KEY= "In a hole in the ground..."
-    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DEPLOY_DATABASE_URL')
 
     SQLALCHEMY_TRACK_MODIFICATIONS=False

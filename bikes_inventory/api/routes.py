@@ -12,20 +12,17 @@ def get():
 @api.route('/bikes', methods = ['POST'])
 @token_required
 def create_bike(current_user_token):
-    model_name = request.json['model_name']
+    model = request.json['model']
     manufacturer = request.json['manufacturer']
     size = request.json['size']
-    msrp = request.json['msrp']
-    frame_material = request.json['frame_material']
+    frameMaterial = request.json['frameMaterial']
     category = request.json['category']
-    speeds = request.json['speeds']
-    stock_weight = request.json['stock_weight']
     user_token = current_user_token.token
 
     print(f'TESTER: {current_user_token.token}')
 
-    bike = Bike(model_name, manufacturer, size, msrp, frame_material,
-    category, speeds, stock_weight, user_token = user_token)
+    bike = Bike(model, manufacturer, size, frameMaterial,
+    category, user_token = user_token)
 
     db.session.add(bike)
     db.session.commit()
@@ -57,14 +54,11 @@ def update_bike(current_user_token, id):
     bike = Bike.query.get(id)
     print(bike)
     if bike:
-        bike.model_name = request.json['model_name']
+        bike.model = request.json['model']
         bike.manufacturer = request.json['manufacturer']
         bike.size = request.json['size']
-        bike.msrp = request.json['msrp']
-        bike.frame_material = request.json['frame_material']
+        bike.frameMaterial = request.json['frameMaterial']
         bike.category = request.json['category']
-        bike.speeds = request.json['speeds']
-        bike.stock_weight = request.json['stock_weight']
         bike.user_token = current_user_token.token
 
         db.session.commit()
