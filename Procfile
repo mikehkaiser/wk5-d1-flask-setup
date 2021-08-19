@@ -1,1 +1,1 @@
-web:gunicorn bikes_inventory:app --preload --timeout 60
+web: gunicorn bikes_inventory:app --preload --timeout 60
