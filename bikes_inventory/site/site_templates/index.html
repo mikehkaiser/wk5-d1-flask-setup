@@ -16,7 +16,9 @@
             <h5>Store, manage, and connect your bikes like never before.</h5>
             <div class="header-buttons">
                 <button class="btn btn-dark" id="learn-more-button">Learn More</button>
-                <button class="btn btn-outline-dark" id="sign-up-button">Sign Up</button>
+                <a href="{{ url_for('auth.signup') }}">
+                    <button class="btn btn-outline-dark" id="sign-up-button">Sign Up</button>
+                </a>
             </div>
         </div>
 
