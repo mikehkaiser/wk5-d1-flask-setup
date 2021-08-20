@@ -55,7 +55,6 @@ class Bike(db.Model):
     id = db.Column(db.String, primary_key = True)
     model = db.Column(db.String(150))
     manufacturer = db.Column(db.String(150))
-    # year = db.Column(db.Numeric(precision=4))
     size = db.Column(db.String(25))
     frameMaterial = db.Column(db.String(150), nullable = True)
     category = db.Column(db.String(100), nullable = True)
@@ -65,7 +64,6 @@ class Bike(db.Model):
         self.id = self.set_id()
         self.model = model
         self.manufacturer = manufacturer
-        # self.year = year
         self.size = size
         self.frameMaterial = frameMaterial
         self.category = category
