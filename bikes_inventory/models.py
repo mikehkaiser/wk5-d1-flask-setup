@@ -54,7 +54,7 @@ class User(db.Model, UserMixin):
 class Bike(db.Model):
     id = db.Column(db.String, primary_key = True)
     model = db.Column(db.String(150))
-    year = db.Column(db.Year(4))
+    year = db.Column(db.String(10))
     manufacturer = db.Column(db.String(150))
     size = db.Column(db.String(25))
     frameMaterial = db.Column(db.String(150), nullable = True)
